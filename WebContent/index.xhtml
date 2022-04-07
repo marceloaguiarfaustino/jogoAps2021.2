@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<h:head><title>Cadastro de Lances</title></h:head>
+	<h:body>
+	
+	<h:form id= "formulario">
+		<p:messages id="messagens" showDetail="false" closeable="true">
+			<p:autoUpdate/>				
+		</p:messages>
+	
+		<p:panel header="Cadastro de Lances">
+		<p:panelGrid columns="2"> 
+			
+			
+			<p:outputLabel value="Descrição:" for="descricao"/>
+			<h:panelGroup>
+			<p:inputText value="#{lanceBean.lance.descricao}" id="descricao" required="true"/>
+			<p:message for="descricao"/>
+			</h:panelGroup>
+			
+			<p:outputLabel value="Número 1:" />
+			<h:panelGroup>
+			<span class="ui-float-label">
+       			<p:inputText disabled="true" value="#{inputTextView.text}"/>
+       			<p:outputLabel for="@previous" value="Número Aleatório"/>
+   			</span>
+			</h:panelGroup>
+			
+			<p:outputLabel value="Número 2:" />
+			<h:panelGroup>
+			<span class="ui-float-label">
+       			<p:inputText disabled="true" value="#{inputTextView.text}"/>
+       			<p:outputLabel for="@previous" value="Número Aleatório"/>
+   			</span>
+			</h:panelGroup>
+			
+			<p:outputLabel value="Número 3:" />
+			<h:panelGroup>
+			<span class="ui-float-label">
+       			<p:inputText disabled="true" value="#{inputTextView.text}"/>
+       			<p:outputLabel for="@previous" value="Número Aleatório"/>
+   			</span>
+			</h:panelGroup>
+			
+			
+			<p:commandButton value="Salvar" action="#{lanceBean.gerar}" update="formulario"/>
+			
+			
+			
+			<p:button value="Listar" outcome="Listagem" styleClass="rounded-button" />
+			
+			
+		</p:panelGrid>
+		</p:panel>
+			
+			
+	</h:form>
+	
+	</h:body>
+</html>
